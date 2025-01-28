@@ -291,10 +291,29 @@ do
             {
                 if (ourAnimals[i, 0] != "ID #: ")
                 {
-                    System.Console.WriteLine(ourAnimals[i, 0]);
+                    // Prompt the user for age 
+                    if (ourAnimals[i, 2] == "Age: " || ourAnimals[i, 2] == "Age: ?")
+                    {
+                        do
+                        {
+                            Console.WriteLine($"Enter an age for  {ourAnimals[i, 0]}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                animalAge = readResult;
+                                if (animalAge != "?")
+                                {
+                                    validEntry = int.TryParse(animalAge, out petAge);
+                                }
+                                else
+                                {
+                                    validEntry = true;
+                                }
+                            }
+                        } while (validEntry == false);
+                    }
                 }
             }
-            
 
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
@@ -320,7 +339,7 @@ do
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
-        
+
         case "7":
             // Display all cats with a specified characteristic
             Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
