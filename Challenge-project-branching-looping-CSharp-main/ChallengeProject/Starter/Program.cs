@@ -346,7 +346,7 @@ do
             {
                 if (ourAnimals[i, 0] != "ID #: ")
                 {
-                    // Prompt the user for age 
+                    // Prompt the user for nickname 
                     if (ourAnimals[i, 3] == "Nickname: " || ourAnimals[i, 3] == "Nickname: ?")
                     {
                         do
