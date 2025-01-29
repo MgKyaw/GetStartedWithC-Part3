@@ -365,6 +365,25 @@ do
                         } while (validEntry == false);
                     }
 
+                    // Prompt the user for Physical description 
+                    if (ourAnimals[i, 4] == "Physical description: " || ourAnimals[i, 4] == "Physical description: ?")
+                    {
+                        do
+                        {
+                            Console.WriteLine($"Enter a physical description for  {ourAnimals[i, 0]} (likes or dislikes, tricks, energy level)");
+                            readResult = Console.ReadLine();
+                            if (readResult is not null && readResult != "")
+                            {
+                                animalPhysicalDescription = readResult;
+                                validEntry = true;
+                            }
+                            else
+                            {
+                                validEntry = false;
+                            }
+                        } while (validEntry == false);
+                    }
+
                 }
             }
 
